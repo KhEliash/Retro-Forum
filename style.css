@@ -1,1 +1,9 @@
- 
+ #btn{
+    background-color: rgb(238, 238, 238);
+    border-radius: 100%;
+    border: 2px solid rgb(189, 187, 187)
+ }
+ /* .background{
+    background-image: url(images/bgbanner.png);
+    background-repeat: no-repeat;
+ } */
