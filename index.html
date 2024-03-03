@@ -118,7 +118,7 @@
     </header>
     <main class="container mx-auto">
       <!-- Lets discuss section -->
-      <section class="mt-24 text-center space-y-5">
+      <section class="mt-24 text-center h-auto">
         <div class="space-y-4">
           <h1 class="text-4xl font-extrabold">Let's Discuss</h1>
           <p class="text-gray-500">
@@ -127,10 +127,22 @@
             integrated testing features allow for a streamlined .
           </p>
         </div>
-        <!-- card -->
-        <div class="bg-green-300 mt-10 w-full h-96 grid grid-cols-4 gap-5">
-          <div class="bg-violet-300 col-span-3">df</div>
-          <div class="bg-yellow-300">djhf</div>
+        <!-- card div -->
+        <div class="mt-10 w-full grid grid-cols-4 gap-5">
+          <div id="latest-post" class="col-span-3 space-y-8"></div>
+          <div class="bg-yellow-300">
+            <div
+              id="right-box"
+              class="bg-gray-100 h-auto rounded-3xl p-6 space-y-2"
+            >
+              <div class="flex justify-between mb-8">
+                <h1 class="text-2xl font-extrabold">Title</h1>
+                <p class="font-bold">
+                  Mark as read: (<span id="mark">0</span>)
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -202,7 +214,8 @@
                 d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
               ></path></svg
           ></a>
-          <a><svg
+          <a
+            ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
