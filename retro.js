@@ -3,9 +3,7 @@ const latestApi = async (searchText = "comedy") => {
     ` https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`
   );
   const data = await res.json();
-  console.log(data);
   const post = data.posts;
-  console.log(post);
 
   displayPost(post);
 };
@@ -66,7 +64,6 @@ const displayPost = (post) => {
     `;
 
     latestPost.appendChild(postDiv);
-
   });
 
   spinner(false);
@@ -147,23 +144,21 @@ const latest = async () => {
 
 // handel
 const handelSearch = () => {
-  spinner(true)
+  spinner(true);
   const searchField = document.getElementById("search-input");
   const searchText = searchField.value;
   console.log(searchText);
   latestApi(searchText);
-
 };
 // toogle
-const spinner =(isLoading)=>{
-  const toogle = document.getElementById('spinner');
-  if(isLoading){
-  toogle.classList.remove('hidden');
-
-  }else{
-    toogle.classList.add('hidden')
+const spinner = (isLoading) => {
+  const toogle = document.getElementById("spinner");
+  if (isLoading) {
+    toogle.classList.remove("hidden");
+  } else {
+    toogle.classList.add("hidden");
   }
-}
+};
 
 latestApi();
 latest();
