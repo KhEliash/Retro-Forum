@@ -81,17 +81,12 @@
 
             <!-- search box -->
             <div class="relative h-14 w-96">
-              <input
-                type="text"
-                name="text"
-                id="text-field"
-                class="h-14 w-96 rounded-full"
-              />
-              <button
-                class="bg-[#797DFC] rounded-full lg:w-28 text-white p-2 absolute right-1 top-2"
-              >
-                Search
-              </button>
+
+              <label class="input input-bordered flex items-center gap-2">
+                <input id="search-input" type="text" class="grow" placeholder="Search Here" />
+                <span onclick="handelSearch()"  class="badge badge-info  bg-[#797DFC] lg:w-28 text-white p-4">Search</span>
+              </label>
+              
             </div>
           </div>
           <!-- right -->
@@ -129,7 +124,7 @@
         </div>
         <!-- card div -->
         <div class="mt-10 w-full grid grid-cols-4 gap-5">
-          <div id="latest-post" class="col-span-3 space-y-8"></div>
+          <div id="latest-card" class="col-span-3 space-y-8"></div>
           <div class="">
             <div
               id="right-box"
@@ -178,6 +173,13 @@
             integrated testing features allow for a streamlined .
           </p>
         </div>
+        <!-- posts -->
+        <div
+          id="latest-posts"
+          class="flex w-full items-center justify-between"
+        >
+      
+      </div>
       </section>
     </main>
 
