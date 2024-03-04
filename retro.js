@@ -5,7 +5,7 @@ const latestApi = async () => {
     `https://openapi.programming-hero.com/api/retro-forum/posts`
   );
   const data = await res.json();
-  //   console.log(data.posts);
+  console.log(data.posts);
 
   const post = data.posts;
   displayPost(post);
@@ -57,8 +57,8 @@ const displayPost = (post) => {
                         <span> ${posts.posted_time} min</span>
                       </p>
                     </div >
-                    <div class="bg-red-500">
-                    <button id="envelop-button" onclick="envelop()" class="bg-green-300 h-8 w-8 rounded-full text-center"><i class="fa-regular fa-envelope"></i></button>
+                    <div class="">
+                    <button id="envelop-button" onclick="envelop(' ${posts.title}','${posts.view_count}')" class="bg-green-300 h-8 w-8 rounded-full text-center"><i class="fa-regular fa-envelope"></i></button>
 
                     </div>
                   </div>
@@ -77,7 +77,7 @@ const displayPost = (post) => {
 
 // }
 
-const envelop = () => {
+const envelop = (id, view_count) => {
   const button = document.getElementById("envelop-button");
 
   const rightBox = document.getElementById("right-box");
@@ -85,47 +85,28 @@ const envelop = () => {
   const rCard = document.createElement("div");
   rCard.innerHTML = `
 <div class="bg-white p-3 rounded-xl flex justify-between items-center h-20">
-<h1 class="text-2xl font-extrabold">  10 Kids Unaware of Their Costume</h1>
+<h1 class=" font-extrabold">  ${id} Costume</h1>
 <div>
   <span><i class="fa-regular fa-eye"></i> </span>
-  <span>25</span>
+  <span>${view_count}</span>
 </div>
 </div>
 `;
 
   rightBox.appendChild(rCard);
+  countNum();
 };
 
+let i = 0;
+const countNum = () => {
+  clicks = i + 1;
+  const mark = document.getElementById("mark").innerText;
+  const makeNum = parseInt(mark);
+  const count = makeNum + clicks;
+  document.getElementById("mark").innerText = count;
+  console.log(count);
+};
+
+// latest post
+
 latestApi();
-
-// const rightBox = document.getElementById('right-box');
-// console.log( rightBox);
-
-// const rCard = document.createElement('div');
-// rCard.innerHTML=`
-// <div class="bg-white p-3 rounded-xl flex justify-between items-center h-20">
-// <h1 class="text-2xl font-extrabold">${posts.title}</h1>
-// <div>
-//   <span><i class="fa-regular fa-eye"></i> </span>
-//   <span>25</span>
-// </div>
-// </div>
-// `;
-// rightBox.appendChild(rCard);
-
-// post.forEach((posts)=> {
-//   const rightBox = document.getElementById('right-box');
-// console.log( rightBox);
-
-// const rCard = document.createElement('div');
-// rCard.innerHTML=`
-// <div class="bg-white p-3 rounded-xl flex justify-between items-center h-20">
-// <h1 class="text-2xl font-extrabold">${posts.title}</h1>
-// <div>
-// <span><i class="fa-regular fa-eye"></i> </span>
-// <span>25</span>
-// </div>
-// </div>
-// `;
-// rightBox.appendChild(rCard);
-// });
