@@ -19,8 +19,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <header class="container mx-auto">
+  <body class="">
+    <header class="container mx-5 lg:mx-auto">
       <!-- nav bar -->
       <div class="navbar bg-base-100 mt-10">
         <div class="flex-1">
@@ -61,7 +61,7 @@
       <div
         class="w-auto bg-[#12132D] lg:w-full rounded-3xl h-auto lg:h-[550px] mt-12 relative"
       >
-        <img class="w-full h-full" src="images/bgbanner.png" alt="" />
+        <img class="w-full h-[800px]" src="images/bgbanner.png" alt="" />
         <div
           class="absolute top-0 px-24 flex flex-col lg:flex-row justify-between w-full py-24 items-center"
         >
@@ -69,7 +69,7 @@
 
           <div class="space-y-8">
             <div class="text-center lg:text-left space-y-5">
-              <h1 class="text-white text-6xl font-extrabold">
+              <h1 class="text-white text-3xl lg:text-6xl font-extrabold">
                 Welcome to the <br />
                 <span class="text-[#797DFC]">ReTro</span> Forum
               </h1>
@@ -80,17 +80,26 @@
             </div>
 
             <!-- search box -->
-            <div class="relative h-14 w-96">
-
+            <div class="relative h-14 lg:w-96">
               <label class="input input-bordered flex items-center gap-2">
-                <input id="search-input" type="text" class="grow" placeholder="Search Here" />
-                <span onclick="handelSearch()"  class="badge badge-info  bg-[#797DFC] lg:w-28 text-white p-4">Search</span>
+                <input
+                  id="search-input"
+                  type="text"
+                  class="grow"
+                  placeholder="Search Here"
+                />
+                <span
+                  onclick="handelSearch()"
+                  class="badge badge-info bg-[#797DFC] lg:w-28 text-white p-4"
+                  >Search</span
+                >
               </label>
-              
             </div>
           </div>
           <!-- right -->
-          <div class="w-96 h-72 bg-white rounded-3xl p-12 space-y-6">
+          <div
+            class="w-72 lg:w-96 lg:h-72 bg-white rounded-3xl p-12 space-y-2 lg:space-x-6"
+          >
             <div class="flex justify-between text-lg font-bold text-gray-500">
               <p>Registered Users</p>
               <p>01</p>
@@ -111,7 +120,7 @@
         </div>
       </div>
     </header>
-    <main class="container mx-auto">
+    <main class="container mx-5 lg:mx-auto">
       <!-- Lets discuss section -->
       <section class="mt-24 text-center h-auto">
         <div class="space-y-4">
@@ -123,12 +132,12 @@
           </p>
         </div>
         <!-- card div -->
-        <div class="mt-10 w-full grid grid-cols-4 gap-5">
-          <div id="latest-card" class="col-span-3 space-y-8"></div>
-          <div class="">
+        <div class="mt-20 w-full grid lg:grid-cols-4 gap-5">
+          <div id="latest-card" class="lg:col-span-3 space-y-8"></div>
+          <div class=" ">
             <div
               id="right-box"
-              class="bg-gray-100 h-auto rounded-3xl p-6 space-y-2"
+              class="bg-gray-100 h-auto rounded-3xl p-6 space-y-2 w-full"
             >
               <div class="flex justify-between mb-8">
                 <h1 class="text-2xl font-extrabold">Title</h1>
@@ -145,7 +154,7 @@
       <section class="mt-16 h-[400px] p-12 bg-[#12132D] rounded-2xl">
         <div class=" ">
           <div class="flex justify-between items-center h-full">
-            <div class="text-left space-y-10">
+            <div class="text-left space-y-3 lg:space-y-10">
               <h1 class="text-4xl text-white font-extrabold">Join Our Forum</h1>
               <p class="text-gray-300">
                 Share your favorite opinion and win and wp forum coffee mug!
@@ -176,10 +185,8 @@
         <!-- posts -->
         <div
           id="latest-posts"
-          class="flex w-full items-center justify-between"
-        >
-      
-      </div>
+          class="flex flex-col lg:flex-row w-full items-center justify-between"
+        ></div>
       </section>
     </main>
 
