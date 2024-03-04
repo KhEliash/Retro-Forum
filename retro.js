@@ -17,7 +17,7 @@ const displayPost = (post) => {
     const postDiv = document.createElement("div");
     postDiv.classList = `bg-gray-100 shadow-xl`;
     postDiv.innerHTML = `
-    <div class="card border-blue-400 w-full lg:h-64">
+    <div class="card border border-blue-100 w-full lg:h-64">
               <div class="flex  flex-col lg:flex-row items-center justify-start gap-6 h-full p-10">
                 <div>
                   <div class="indicator">
@@ -66,7 +66,10 @@ const displayPost = (post) => {
     `;
 
     latestPost.appendChild(postDiv);
+
   });
+
+  spinner(false);
   // badge
   // const badge = document.getElementById('badge').classList;
 
@@ -144,11 +147,23 @@ const latest = async () => {
 
 // handel
 const handelSearch = () => {
+  spinner(true)
   const searchField = document.getElementById("search-input");
   const searchText = searchField.value;
   console.log(searchText);
   latestApi(searchText);
+
 };
+// toogle
+const spinner =(isLoading)=>{
+  const toogle = document.getElementById('spinner');
+  if(isLoading){
+  toogle.classList.remove('hidden');
+
+  }else{
+    toogle.classList.add('hidden')
+  }
+}
 
 latestApi();
 latest();
